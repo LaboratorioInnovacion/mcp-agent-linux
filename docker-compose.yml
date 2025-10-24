@@ -1,0 +1,11 @@
+version: "3.9"
+services:
+  mcp-agent:
+    build: .
+    container_name: mcp-agent
+    env_file: .env
+    volumes:
+      - ./logs:/app/logs
+      - ./src:/app/src:ro
+    stdin_open: true
+    tty: true
